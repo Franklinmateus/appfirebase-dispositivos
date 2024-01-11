@@ -106,14 +106,12 @@ public class CadastroActivity extends AppCompatActivity {
                     });
         }
         private void redirecionarParaPaginaUsuario(String nome, String email) {
-            // Criar uma Intent para a nova Activity
             Intent intent = new Intent(CadastroActivity.this, PaginaUsuarioActivity.class);
-            // Passar dados do usuário para a nova Activity
             intent.putExtra("NOME_USUARIO", nome);
             intent.putExtra("EMAIL_USUARIO", email);
             // Iniciar a nova Activity
             startActivity(intent);
-            finish();  // Opcional, se você quiser encerrar a atividade atual após o redirecionamento.
+            finish();
         }
         private void Iniciar(){
 

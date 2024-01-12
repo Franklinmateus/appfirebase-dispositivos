@@ -1,25 +1,12 @@
-# Nome do Projeto
+# Título
+## Subtítulo
+### Sub-subtítulo
+Adicionar uma imagem: Para adicionar uma imagem, você pode usar a seguinte sintaxe:
+!Texto alternativo
+O “Texto alternativo” é o texto que será exibido se a imagem não puder ser carregada. O “url_da_imagem” é o link para a imagem que você deseja adicionar.
+Destacar código: Para destacar um bloco de código, você pode usar três crases (```) antes e depois do bloco de código. Por exemplo:
+print(“Olá, mundo!”)
+Se você quiser especificar a linguagem de programação para o destaque de sintaxe, pode fazê-lo da seguinte maneira:
+```python
+print("Olá, mundo!")
 
-Este é um projeto Python simples.
-
-## Pré-requisitos
-
-Você precisará do Python 3.6 ou superior instalado em sua máquina. Você também precisará do pip (gerenciador de pacotes do Python) instalado.
-
-## Instalação
-
-1. Clone o repositório:
-    ```
-    git clone https://github.com/seuusuario/seuprojeto.git
-    ```
-2. Navegue até o diretório do projeto:
-    ```
-    cd seuprojeto
-    ```
-3. Instale as dependências:
-    ```
-    pip install -r requirements.txt
-    ```
-## Uso
-
-Para executar o script principal, use o seguinte comando:

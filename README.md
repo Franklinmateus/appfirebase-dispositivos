@@ -7,31 +7,11 @@ Aqui está um guia básico para entender e configurar o projeto:
 Configuração do Ambiente de Desenvolvimento
 Configuração do Firebase:
 
-Crie um projeto no Console do Firebase.
-Adicione um aplicativo Android ao seu projeto e faça o download do arquivo de configuração google-services.json.
-Configuração do Android Studio:
 
-Crie um novo projeto no Android Studio.
-Adicione o arquivo google-services.json ao diretório do seu projeto.
-Integração com Firebase:
-
-Adicione as dependências necessárias no arquivo build.gradle do módulo:
-
-gradle
-Copy code
-implementation 'com.google.firebase:firebase-database:23.0.0'
-implementation 'com.google.firebase:firebase-auth:23.0.0'
-Certifique-se de usar a versão mais recente do SDK do Firebase.
-
-Inicialize o Firebase no seu código Java:
-
-java
-Copy code
-FirebaseApp.initializeApp(this);
 ## Implementação do CRUD
 
 ### CadastroAcitivity (Create):
-  ```java A CadastroActivity é uma activity cujo objetivo é o cadastro de usuários. O código inicia configurando a interface do usuário, como campos de texto e botões. Quando o botão de cadastro é clicado, o aplicativo verifica se os campos de nome, e-mail e senha foram preenchidos. Se estiverem preenchidos, o código utiliza o Firebase Authentication para criar um novo usuário. Em caso de sucesso no cadastro, os dados adicionais do usuário (nome e e-mail) são armazenados no Firebase Firestore. O usuário é então redirecionado para uma página de perfil. Caso ocorra algum erro no processo de cadastro, uma mensagem de erro é exibida ao usuário. O código é estruturado de maneira a separar as responsabilidades em métodos, facilitando a compreensão e manutenção do código.```
+  A CadastroActivity é uma activity cujo objetivo é o cadastro de usuários. O código inicia configurando a interface do usuário, como campos de texto e botões. Quando o botão de cadastro é clicado, o aplicativo verifica se os campos de nome, e-mail e senha foram preenchidos. Se estiverem preenchidos, o código utiliza o Firebase Authentication para criar um novo usuário. Em caso de sucesso no cadastro, os dados adicionais do usuário (nome e e-mail) são armazenados no Firebase Firestore. O usuário é então redirecionado para uma página de perfil. Caso ocorra algum erro no processo de cadastro, uma mensagem de erro é exibida ao usuário. O código é estruturado de maneira a separar as responsabilidades em métodos, facilitando a compreensão e manutenção do código.
 
 ```java
 

@@ -139,27 +139,109 @@ public class CadastroActivity extends AppCompatActivity {
 
 ```
 
-### 2.2 EditarUsuarioActivity (Read):
+### 2.2  (Read):
 
-A EditarUsuarioActivity é uma atividade em um aplicativo Android responsável por permitir que os usuários editem seus nomes. Quando a atividade é iniciada, ela recupera o e-mail do usuário da intent que a iniciou. A interface do usuário contém um campo de texto (edtNovoValor) para inserção do novo nome e um botão de salvar (btnSalvar).
 
-Quando o botão de salvar é clicado, o código verifica se o campo do novo valor não está vazio. Se não estiver vazio, ele utiliza o Firebase Firestore para procurar o documento correspondente ao usuário com base no e-mail. Se o usuário for encontrado, o nome do usuário é atualizado com o novo valor. Em caso de sucesso, a atividade é finalizada e retorna para a PaginaUsuarioActivity com os dados atualizados.
 
-Se ocorrerem falhas durante esse processo, mensagens Toast são exibidas para informar o usuário sobre os problemas encontrados.
+### 2.3 EditarUsuarioActivity (Update):
 
-O código é estruturado de forma a garantir a validação do novo valor, manipulação adequada de dados no Firestore e feedback apropriado para o usuário durante o processo de edição.
+A EditarUsuarioActivity é uma atividade em um aplicativo Android responsável por permitir que os usuários editem seus nomes. Quando a atividade é iniciada, ela recupera o e-mail do usuário da intent que a iniciou. A interface do usuário contém um campo de texto (edtNovoValor) para inserção do novo nome e um botão de salvar (btnSalvar). Quando o botão de salvar é clicado, o código verifica se o campo do novo valor não está vazio. Se não estiver vazio, ele utiliza o Firebase Firestore para procurar o documento correspondente ao usuário com base no e-mail. Se o usuário for encontrado, o nome do usuário é atualizado com o novo valor. Em caso de sucesso, a atividade é finalizada e retorna para a PaginaUsuarioActivity com os dados atualizados. Se ocorrerem falhas durante esse processo, mensagens Toast são exibidas para informar o usuário sobre os problemas encontrados. O código é estruturado de forma a garantir a validação do novo valor, manipulação adequada de dados no Firestore e feedback apropriado para o usuário durante o processo de edição.
 
 ```java
+
+package com.example.myapplicationfirebases.activity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplicationfirebases.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+public class EditarUsuarioActivity extends AppCompatActivity {
+
+    private EditText edtNovoValor;
+    private Button btnSalvar;
+    private String emailUsuario;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_editar_usuario);
+
+        edtNovoValor = findViewById(R.id.edtNovoValor);
+        btnSalvar = findViewById(R.id.btnSalvar);
+
+        // Obter o e-mail do usuário da intent
+        emailUsuario = getIntent().getStringExtra("EMAIL_USUARIO");
+
+        // Configurar botão de salvar
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String novoValor = edtNovoValor.getText().toString();
+                // Verificar se o novo valor não está vazio
+                if (!novoValor.isEmpty()) {
+                    // Editar o nome do usuário no Firestore
+                    editarNomeUsuario(novoValor);
+                } else {
+                    // Exibir Toast informando que o novo valor não pode estar vazio
+                    Toast.makeText(EditarUsuarioActivity.this, "O novo valor não pode estar vazio", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private void editarNomeUsuario(String novoNome) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        // Atualizar o nome do usuário no Firestore usando o e-mail como referência
+        db.collection("usuarios")
+                .whereEqualTo("email", emailUsuario)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && !task.getResult().isEmpty()) {
+                        DocumentReference documentReference = task.getResult().getDocuments().get(0).getReference();
+                        documentReference.update("nome", novoNome)
+                                .addOnCompleteListener(updateTask -> {
+                                    if (updateTask.isSuccessful()) {
+                                        // Retornar para a PaginaUsuarioActivity com os dados atualizados
+                                        retornarParaPaginaUsuario(novoNome);
+                                    } else {
+                                        // Exibir Toast informando falha na edição
+                                        Toast.makeText(EditarUsuarioActivity.this, "Erro ao editar o nome do usuário", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                    } else {
+                        // Tratar falha na recuperação dos dados do usuário
+                        Toast.makeText(EditarUsuarioActivity.this, "Falha ao recuperar dados do usuário", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void retornarParaPaginaUsuario(String novoNome) {
+        // Criar uma Intent para retornar para a PaginaUsuarioActivity
+        Intent intent = new Intent();
+        // Passar o novo nome como extra da Intent
+        intent.putExtra("NOVO_NOME", novoNome);
+        // Definir o resultado como RESULT_OK
+        setResult(RESULT_OK, intent);
+        // Finalizar a atividade de edição e retornar para a PaginaUsuarioActivity
+        finish();
+    }
+}
 
 
   
 ```
 
-
-
-
-Recupere os dados do Firebase e exiba-os na interface do usuário.
-Update (Atualizar):
 
 Permita que os usuários editem dados existentes.
 Utilize o Firebase para atualizar os dados no banco de dados.

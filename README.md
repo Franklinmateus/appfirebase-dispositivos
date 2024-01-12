@@ -1,7 +1,7 @@
 # Projeto de CRUD com Firebase em Java mobile para Dispositivos Móveis
 Este projeto foi desenvolvido como parte da disciplina de Laboratório de Programação para Dispositivos Móveis. O objetivo principal é demonstrar a implementação de um ```CRUD (Create, Read, Update, Delete)``` utilizando o Firebase como banco de dados em um aplicativo mobile em Java.
 
-Passo a Passo Básico
+##Passo a Passo Básico
 Aqui está um guia básico para entender e configurar o projeto:
 
 Configuração do Ambiente de Desenvolvimento

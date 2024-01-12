@@ -287,7 +287,8 @@ Manipulação de Resultados da Atividade de Edição:
 ```
 No método onActivityResult(), verifica se a atividade de edição retornou com sucesso e se há um novo nome retornado.
 Atualiza o nome exibido na interface com o novo nome, se disponível.
-O código é estruturado para interagir eficientemente com o Firebase Firestore, fornecendo uma experiência de usuário interativa para edição e exclusão de informações do usuário. Mensagens Toast são utilizadas para fornecer feedback ao usuário sobre o resultado das operações.
+O código é estruturado para interagir eficientemente com o Firebase Firestore, fornecendo uma experiência de usuário
+interativa para edição e exclusão de informações do usuário. Mensagens Toast são utilizadas para fornecer feedback ao usuário sobre o resultado das operações.
 ```
 
 Permita que os usuários editem dados existentes.

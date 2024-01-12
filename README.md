@@ -1,16 +1,15 @@
 # Projeto de CRUD com Firebase em Java mobile para Dispositivos Móveis
 Este projeto foi desenvolvido como parte da disciplina de Laboratório de Programação para Dispositivos Móveis. O objetivo principal é demonstrar a implementação de um ```CRUD (Create, Read, Update, Delete)``` utilizando o Firebase como banco de dados em um aplicativo mobile em Java.
 
-## Passo a Passo Básico
-Aqui está um guia básico para entender e configurar o projeto:
+# Passo a Passo Básico
 
-Configuração do Ambiente de Desenvolvimento
+## 1 Configuração do Ambiente de Desenvolvimento
 Configuração do Firebase:
 
 
-## Implementação do CRUD
+## 2 Implementação do CRUD
 
-### CadastroAcitivity (Create):
+### 2.1 CadastroAcitivity (Create):
   A CadastroActivity é uma activity cujo objetivo é o cadastro de usuários. O código inicia configurando a interface do usuário, como campos de texto e botões. Quando o botão de cadastro é clicado, o aplicativo verifica se os campos de nome, e-mail e senha foram preenchidos. Se estiverem preenchidos, o código utiliza o Firebase Authentication para criar um novo usuário. Em caso de sucesso no cadastro, os dados adicionais do usuário (nome e e-mail) são armazenados no Firebase Firestore. O usuário é então redirecionado para uma página de perfil. Caso ocorra algum erro no processo de cadastro, uma mensagem de erro é exibida ao usuário. O código é estruturado de maneira a separar as responsabilidades em métodos, facilitando a compreensão e manutenção do código.
 
 ```java

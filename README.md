@@ -7,9 +7,9 @@ Este projeto foi desenvolvido como parte da disciplina de Laboratório de Progra
 Configuração do Firebase:
 
 
-## 2 Implementação do CRUD
+## 2 Resumo activities
 
-Nesta parte, abordaremos brevemente o funcionamento do CRUD em um contexto específico, considerando que os leitores já estejam familiarizados com a implementação básica desse padrão. O foco principal deste projeto é demonstrar a integração eficiente do Firebase, destacando como o Realtime Database e o Firestore são utilizados para gerenciar operações de criação, leitura, atualização e exclusão de dados em um aplicativo Android. Ao invés de uma abordagem convencional de banco de dados, este projeto visa oferecer uma visão prática e concisa do poder e da simplicidade que o Firebase traz para o desenvolvimento móvel, especialmente na manipulação em tempo real de dados na nuvem.
+Nesta parte, abordaremos brevemente o funcionamento do CRUD pelas activities, considerando que os leitores já estejam familiarizados com a implementação básica desse padrão. O foco principal deste projeto é demonstrar a integração eficiente do Firebase, destacando como o Realtime Database e o Firestore são utilizados para gerenciar operações de criação, leitura, atualização e exclusão de dados em um aplicativo Android. Ao invés de uma abordagem convencional de banco de dados, este projeto visa oferecer uma visão prática e concisa do poder e da simplicidade que o Firebase traz para o desenvolvimento móvel, especialmente na manipulação em tempo real de dados na nuvem.
 
 ### 2.1 CadastroAcitivity (Create):
   A CadastroActivity é uma activity cujo objetivo é o cadastro de usuários. O código inicia configurando a interface do usuário, como campos de texto e botões. Quando o botão de cadastro é clicado, o aplicativo verifica se os campos de nome, e-mail e senha foram preenchidos. Se estiverem preenchidos, o código utiliza o Firebase Authentication para criar um novo usuário. <br>
@@ -140,11 +140,7 @@ public class CadastroActivity extends AppCompatActivity {
 
 ```
 
-### 2.2  (Read):
-
-
-
-### 2.3 EditarUsuarioActivity (Update):
+### 2.2 EditarUsuarioActivity (Update):
 
 A EditarUsuarioActivity é uma atividade em um aplicativo Android responsável por permitir que os usuários editem seus nomes. Quando a atividade é iniciada, ela recupera o e-mail do usuário da intent que a iniciou. A interface do usuário contém um campo de texto (edtNovoValor) para inserção do novo nome e um botão de salvar (btnSalvar). <br>
 Quando o botão de salvar é clicado, o código verifica se o campo do novo valor não está vazio. Se não estiver vazio, ele utiliza o Firebase Firestore para procurar o documento correspondente ao usuário com base no e-mail. Se o usuário for encontrado, o nome do usuário é atualizado com o novo valor. <br>
@@ -241,6 +237,39 @@ public class EditarUsuarioActivity extends AppCompatActivity {
 
   
 ```
+
+
+### 2.3 PaginaUsuarioActivity (Read,Delete):
+
+A PaginaUsuarioActivity é uma atividade em um aplicativo Android que exibe os detalhes do usuário, como nome e e-mail. Além disso, permite que o usuário edite seu nome ou exclua sua conta. Aqui está um resumo do que o código faz:
+```
+  Recuperação dos Dados do Usuário:<br>
+    Obtém o e-mail do usuário atualmente autenticado no Firebase.<br>
+    Consulta o Firestore para obter os dados associados a esse e-mail.<br>
+    Exibe o nome e o e-mail do usuário na interface.<br>
+    Configuração dos Botões de Edição e Exclusão: <br>
+```
+Configura o botão "Editar" para iniciar a EditarUsuarioActivity com o e-mail do usuário como um extra da Intent.<br>
+Configura o botão "Excluir" para chamar o método excluirUsuario().<br>
+
+Edição do Usuário:
+  ```
+  Ao clicar em "Editar", inicia a EditarUsuarioActivity e espera um resultado.
+  Se o resultado for RESULT_OK e houver um novo nome retornado, atualiza o nome exibido na interface.
+  Exclusão do Usuário:
+  ```
+
+Ao clicar em "Excluir", chama o método excluirUsuario().
+Consulta o Firestore para encontrar o documento associado ao e-mail do usuário.
+Exclui o documento do Firestore e exibe mensagens de sucesso ou falha.
+Retorno para a CadastroActivity:
+
+Após excluir com sucesso, retorna para a CadastroActivity (página de login/cadastro).
+Manipulação de Resultados da Atividade de Edição:
+
+No método onActivityResult(), verifica se a atividade de edição retornou com sucesso e se há um novo nome retornado.
+Atualiza o nome exibido na interface com o novo nome, se disponível.
+O código é estruturado para interagir eficientemente com o Firebase Firestore, fornecendo uma experiência de usuário interativa para edição e exclusão de informações do usuário. Mensagens Toast são utilizadas para fornecer feedback ao usuário sobre o resultado das operações.
 
 
 Permita que os usuários editem dados existentes.

@@ -162,7 +162,8 @@ ele utiliza o Firebase Firestore para procurar o documento correspondente ao usu
 Se o usuário for encontrado, o nome do usuário é atualizado com o novo valor.
 Em caso de sucesso, a atividade é finalizada e retorna para a PaginaUsuarioActivitycom os dados atualizados.
 Se ocorrerem falhas durante esse processo, mensagens Toast são exibidas para informar o usuário sobre os problemas encontrados.
-O código é estruturado de forma a garantir a validação do novo valor, manipulação adequada de dados no Firestore e feedback apropriado para o usuário durante o processo de edição.
+O código é estruturado de forma a garantir a validação do novo valor, manipulação adequada de dados no Firestore
+e feedback apropriado para o usuário durante o processo de edição.
 ```
 ```java
 

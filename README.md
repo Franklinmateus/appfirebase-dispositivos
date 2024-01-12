@@ -3,19 +3,19 @@ Este projeto foi desenvolvido como parte da disciplina de Laboratório de Progra
 
 # Passo a Passo Básico
 
-## 1 Configuração do Ambiente de Desenvolvimento
+## 1. Configuração do Ambiente de Desenvolvimento
 Configuração do Firebase:
 
 
-## 2 Resumo activities
-```
+## 2. Resumo activities
+
 Nesta parte, abordaremos brevemente o funcionamento do CRUD pelas activities, considerando que os leitores já estão
 familiarizados com a implementação básica desse padrão. O foco principal deste projeto é demonstrar a integração do
 Firebase, destacando como o Realtime Database e o Firestore são utilizados para gerenciar operações de criação,
 leitura, atualização e exclusão de dados em um aplicativo Android. Ao invés de uma abordagem convencional de banco
 de dados, este projeto visa oferecer uma visão prática e concisa do poder e da simplicidade que o Firebase
 traz para o desenvolvimento móvel, especialmente na manipulação em tempo real de dados na nuvem.
-```
+
 ### 2.1 CadastroAcitivity (Create):
 ```
   A CadastroActivity é uma activity cujo objetivo é o cadastro de usuários. O código inicia configurando a interface

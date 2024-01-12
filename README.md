@@ -153,7 +153,7 @@ public class CadastroActivity extends AppCompatActivity {
 ```
 
 ### 2.2 EditarUsuarioActivity (Update):
-```
+
  A EditarUsuarioActivity é uma atividade em um aplicativo Android responsável por permitir que os usuários editem seus
 nomes. Quando a atividade é iniciada, ela recupera o e-mail do usuário da intent que a iniciou.
 A interface do usuário contém um campo de texto (edtNovoValor) para inserção do novo nome e um botão de salvar (btnSalvar).
@@ -164,7 +164,7 @@ Em caso de sucesso, a atividade é finalizada e retorna para a PaginaUsuarioActi
 Se ocorrerem falhas durante esse processo, mensagens Toast são exibidas para informar o usuário sobre os problemas encontrados.
 O código é estruturado de forma a garantir a validação do novo valor, manipulação adequada de dados no Firestore
 e feedback apropriado para o usuário durante o processo de edição.
-```
+
 ```java
 
 package com.example.myapplicationfirebases.activity;

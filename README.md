@@ -11,8 +11,7 @@ Pesquise por firebase ou acesse o link ```https://firebase.google.com/``` e entr
 
 ### 1.2 Criar projeto
 
-  Após acessar o site do firebase vá em Adicionar Projeto
-![adicionar projeto](https://drive.google.com/file/d/1VnsVJilsU7mB9WDRNPYRBV0yy9VtgR-3/view?usp=sharing)
+  Após acessar o site do firebase vá em ```Adicionar Projeto```, possa ser que você esteja em uma tela diferente onde logo no começo estará escrito ```Começar```, basta clicar em começar que sera redirecionado para a tela que tem o ```Adicionar projeto```
 
 ## 2. Resumo activities
 

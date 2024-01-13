@@ -4,8 +4,17 @@ Este projeto foi desenvolvido como parte da disciplina de Laboratório de Progra
 # Passo a Passo Básico
 
 ## 1. Configuração do Ambiente de Desenvolvimento
-Configuração do Firebase:
 
+### 1.1 Acesse o site do firebase
+
+Pesquise por firebase ou acesse o link ```https://firebase.google.com/``` e entre com uma conta google, caso você ja esteja logado no gmail, youtube ou  outros serviços google, assim que acessar o site do firebase você ja estará logado.
+
+### 1.2 Criar projeto
+
+  Após acessar o site do firebase vá em Adicionar Projeto
+![adicionar projeto](https://drive.google.com/file/d/1VnsVJilsU7mB9WDRNPYRBV0yy9VtgR-3/view)
+
+  https://drive.google.com/file/d/1VnsVJilsU7mB9WDRNPYRBV0yy9VtgR-3/view?usp=drive_link
 
 ## 2. Resumo activities
 

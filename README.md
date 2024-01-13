@@ -12,7 +12,12 @@ Pesquise por firebase ou acesse o link ```https://firebase.google.com/``` e entr
 ### 1.2 Criar projeto
 
   Após acessar o site do firebase vá em ```Adicionar Projeto```, possa ser que você esteja em uma tela diferente onde logo no começo estará escrito ```Começar```, basta clicar em começar que sera redirecionado para a tela que tem o ```Adicionar projeto```. <br>
-  Após clicar em adicionar projeto, será redirecionado para uma onde é solicitado um noem apra o projeto, caso esteja usando esse repositório use o ```appfirebase-dispositivos```. em seguida desabilite o google analytics e depois clique em criar projeto. Em sequência, vá ao codigo do projeto e acesse o arquivo ```build.gradle.kts```, nele procure por ```applicationId```, caso seja o projeto que foi disponibilizado no github,será ```com.example.myapplicationfirebases```.
+  Após clicar em adicionar projeto, será redirecionado para uma onde é solicitado um noem apra o projeto, caso esteja usando esse repositório use o ```appfirebase-dispositivos```. em seguida desabilite o google analytics e depois clique em criar projeto. Em sequência, vá ao codigo do projeto e acesse o arquivo ```build.gradle.kts```, nele procure por ```applicationId```, caso seja o projeto que foi disponibilizado no github,será ```com.example.myapplicationfirebases```. Pegando o nome de pacote do projeto, volte ao site do firebase se não houver nenhum irregularidade, haverá um icone do android ao lado do icone iOS, clique no icone do android e cole em Nome do pacote do Android e clique em ```registrar app```.
+
+### 1.3 Adicionar O Firebase ao projeto
+
+  Para essa parte deve-se ter feito toda parte do criar projeto, e considerando que estará fazendo essa parte ja em sequencia para não haver incoveniencias.
+  Apos ter clicado no botão ```registrar app```, você será redirecionado para um tela, nessa tela você irá baixar um arquivo chamado ```google-services.json``` que foi disponibilizado para download, esse arquivo deve ser colocado na pasta app, conforme indica a imagem.
 
   
 ## 2. Resumo activities

@@ -12,7 +12,7 @@ Pesquise por firebase ou acesse o link ```https://firebase.google.com/``` e entr
 ### 1.2 Criar projeto
 
   Após acessar o site do firebase vá em ```Adicionar Projeto```, possa ser que você esteja em uma tela diferente onde logo no começo estará escrito ```Começar```, basta clicar em começar que sera redirecionado para a tela que tem o ```Adicionar projeto```. <br>
-  Após clicar em adicionar projeto, será redirecionado para uma onde é solicitado um noem apra o projeto, caso esteja usando esse repositório use o ```appfirebase-dispositivos```. em seguida desabilite o google analytics e depois clique em criar projeto. Em sequência, vá ao codigo do projeto e acesse o arquivo ```build.gradle.kts```, nele procure por ```java applicationId``` 
+  Após clicar em adicionar projeto, será redirecionado para uma onde é solicitado um noem apra o projeto, caso esteja usando esse repositório use o ```appfirebase-dispositivos```. em seguida desabilite o google analytics e depois clique em criar projeto. Em sequência, vá ao codigo do projeto e acesse o arquivo ```build.gradle.kts```, nele procure por ```applicationId```, caso seja o projeto que foi disponibilizado no github,será ```com.example.myapplicationfirebases```.
 
   
 ## 2. Resumo activities
